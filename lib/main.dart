@@ -6,10 +6,7 @@ void main() {
 }
 
 class App extends StatefulWidget {
-  App({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+  App({Key key}) : super(key: key);
   @override
   _AppState createState() => _AppState();
 }
@@ -24,7 +21,7 @@ class _AppState extends State<App> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('123'),
+          title: Text('aiinee'),
         ),
         body: Home(),
         floatingActionButton: FloatingActionButton(
