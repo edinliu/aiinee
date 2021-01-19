@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './view/Match.dart';
+import './screen/Match.dart';
 
 void main() {
   runApp(App());
