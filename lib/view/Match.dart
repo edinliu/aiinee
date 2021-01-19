@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  Home({Key key, this.title}) : super(key: key);
+class Match extends StatefulWidget {
+  Match({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _HomeState createState() => _HomeState();
+  _MatchState createState() => _MatchState();
 }
 
-class _HomeState extends State<Home> {
+class _MatchState extends State<Match> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -26,6 +26,9 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           Text(
             'You have pushed the button this many times:',
+          ),
+          Text(
+            widget.title,
           ),
           Text(
             '$_counter',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './view/Home.dart';
+import './view/Match.dart';
 
 void main() {
   runApp(App());
@@ -30,7 +30,7 @@ class _AppState extends State<App> {
         appBar: AppBar(
           title: Text('aiinee'),
         ),
-        body: Home(),
+        body: Match(title: 'prop from father'),
         floatingActionButton: FloatingActionButton(
           onPressed: () => {},
           tooltip: 'Increment',
