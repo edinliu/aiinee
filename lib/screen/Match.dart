@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_history_observer/navigation_history_observer.dart';
 
 class Match extends StatefulWidget {
   Match({Key key, this.title}) : super(key: key);
@@ -17,7 +16,6 @@ class _MatchState extends State<Match> {
     setState(() {
       _counter++;
     });
-    print(NavigationHistoryObserver().top);
   }
 
   @override
