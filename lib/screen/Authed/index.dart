@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './Match.dart';
 import './Profile.dart';
 import './Chat.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Authed extends StatefulWidget {
   Authed({Key key}) : super(key: key);
@@ -24,6 +25,16 @@ class _AuthedState extends State<Authed> {
     });
   }
 
+  void handleClick(String value) async {
+    switch (value) {
+      case 'Logout':
+        await FirebaseAuth.instance.signOut();
+        break;
+      case 'Settings':
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +42,20 @@ class _AuthedState extends State<Authed> {
       home: Scaffold(
         backgroundColor: Color.fromRGBO(100, 100, 100, 1),
         appBar: AppBar(
-          title: Text('aiinee'),
+          title: Text('aiineee'),
+          actions: <Widget>[
+            PopupMenuButton<String>(
+              onSelected: handleClick,
+              itemBuilder: (BuildContext context) {
+                return ['Logout', 'Settings'].map((String choice) {
+                  return PopupMenuItem<String>(
+                    value: choice,
+                    child: Text(choice),
+                  );
+                }).toList();
+              },
+            ),
+          ],
         ),
         body: page,
         floatingActionButton: FloatingActionButton(
