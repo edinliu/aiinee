@@ -1,4 +1,4 @@
-package com.example.rest_api
+package com.aiinee.app
 
 import io.flutter.embedding.android.FlutterActivity
 
