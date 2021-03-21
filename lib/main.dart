@@ -16,19 +16,19 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-
-  List data;
+  String data = '123';
 
   Future<String> getData() async {
     var response = await http.get(
-      Uri.encodeFull("https://jsonplaceholder.typicode.com/posts"),
-      headers: {
-        "Accept": "application/json"
-      }
-    );
-    data = json.decode(response.body);
-    print(data[1]["title"]);
-    
+        Uri.encodeFull(
+            "https://asia-northeast1-aiinee.cloudfunctions.net/expressApp/a/helloworld"),
+        headers: {"Accept": "application/json"});
+    var obj = await json.decode(response.body);
+
+    setState(() {
+      data = data + ',' + obj['haha'];
+    });
+
     return "Success!";
   }
 
@@ -36,10 +36,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        child: new RaisedButton(
-          child: new Text("Get data"),
-          onPressed: getData,
-        ),
+        child: new TextButton(onPressed: getData, child: new Text(data)),
       ),
     );
   }
