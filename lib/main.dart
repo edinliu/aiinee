@@ -1,10 +1,8 @@
-import 'dart:async';
-import 'dart:convert';
-
+import 'helpers/fetchApi.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 void main() {
+  setBaseUrl();
   runApp(new MaterialApp(
     home: new HomePage(),
   ));
@@ -16,20 +14,13 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  String data = '123';
+  String data = 'This is button';
 
-  Future<String> getData() async {
-    var response = await http.get(
-        Uri.encodeFull(
-            "https://asia-northeast1-aiinee.cloudfunctions.net/expressApp/a/helloworld"),
-        headers: {"Accept": "application/json"});
-    var obj = await json.decode(response.body);
-
+  getData() async {
+    var obj = await fetchApi("a/helloworld");
     setState(() {
       data = data + ',' + obj['haha'];
     });
-
-    return "Success!";
   }
 
   @override
