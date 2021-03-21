@@ -15,8 +15,8 @@ setBaseUrl() {
 
 Future<Map> fetchApi(apiName) async {
   var url = '$baseUrl/$apiName';
-  var response = await http
-      .get(Uri.encodeFull(url), headers: {"Accept": "application/json"});
+  var response =
+      await http.get(Uri.parse(url), headers: {"Accept": "application/json"});
   var obj = await json.decode(response.body);
   return obj;
 }
