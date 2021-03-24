@@ -1,3 +1,9 @@
+# 要啟用google auth
+cd android
+./gradlew signingReport
+把所有SHA新增進firestore
+重新下載google-services
+
 # Flutter SDK: HTTP Requests and REST api Tutorial
 The video tutorial for this repo can be found here: https://youtu.be/m7b7_Nq7XSs
 

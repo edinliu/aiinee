@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "847285702477-j93k9htrla9fhjbkk4s3i4krqems080k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aiinee.app",
+            "certificate_hash": "bb9fb2da6043a080c2503c3b2fee03100f43f96a"
+          }
+        },
+        {
           "client_id": "847285702477-avm52pu41btkdrhgdcbv37jvhoocd948.apps.googleusercontent.com",
           "client_type": 3
         }
