@@ -3,17 +3,19 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
+  "assets/AssetManifest.json": "a9e95ef12f2fa4d5464c8c8a3180b099",
+"assets/assets/45022-isometric-smartphone.json": "7b69a2eae61781ee6e5898f079cb8c1c",
+"assets/assets/flower.jpg": "9ba855262868ef2abe1c71daa3a12c01",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/NOTICES": "4c14e3948bc896bd62a3f1d4c5af5f98",
+"assets/NOTICES": "aa5d8151330f042364834d7c48a0455f",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "9a62a954b81a1ad45a58b9bcea89b50b",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "e58e01f96bb115aedd5918cd0cb7a746",
-"/": "e58e01f96bb115aedd5918cd0cb7a746",
-"main.dart.js": "b8a9426cbb2f476033f4316ce263434c",
+"index.html": "c8b1108f866a44a9d9419bb1ac5586d3",
+"/": "c8b1108f866a44a9d9419bb1ac5586d3",
+"main.dart.js": "e60b8edaaf5c807ee7c880d7ff4354fa",
 "manifest.json": "e00b4af5167226fc2f9fdd8f076a405c",
 "version.json": "8d1daaa0618e3da3a2a513d3a4a8c2ec"
 };
