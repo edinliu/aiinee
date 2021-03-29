@@ -38,7 +38,6 @@ class _AuthedState extends State<Authed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(100, 100, 100, 1),
       appBar: AppBar(
         title: Text('aiineee'),
         actions: <Widget>[

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import '../widgets/FirebaseEmailAndPassword.dart';
+import '../widgets/FirebaseEmailAndPassword.dart';
 import '../widgets/googleAuthButton.dart';
 
 class Login extends StatefulWidget {
@@ -14,6 +14,9 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: googleAuthButton);
+    return Center(
+        child: Column(
+      children: [googleAuthButton, FirebaseEmailAndPassword()],
+    ));
   }
 }

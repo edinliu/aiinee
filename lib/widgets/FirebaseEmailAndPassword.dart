@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 class FirebaseEmailAndPassword extends StatefulWidget {
   FirebaseEmailAndPassword({Key key, this.title}) : super(key: key);
@@ -12,7 +13,6 @@ class FirebaseEmailAndPassword extends StatefulWidget {
 }
 
 class _FirebaseEmailAndPasswordState extends State<FirebaseEmailAndPassword> {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final _formKey = GlobalKey<FormState>();
 
   String _email;
@@ -23,56 +23,58 @@ class _FirebaseEmailAndPasswordState extends State<FirebaseEmailAndPassword> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Color.fromRGBO(100, 100, 100, 1),
-        key: _scaffoldKey,
-        body: SingleChildScrollView(
-            child: Container(
-                height: MediaQuery.of(context).size.height,
-                child: Stack(
-                  children: [
-                    Form(
-                      key: _formKey,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                              flex: 3,
-                              child: SizedBox(),
-                            ),
-                            SizedBox(
-                              height: 50,
-                            ),
-                            _emailPasswordWidget(),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            _submitButton(),
-                            Container(
-                              padding: EdgeInsets.symmetric(vertical: 10),
-                              alignment: Alignment.centerRight,
-                              child: Text('Forgot Password ?',
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500)),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: SizedBox(),
-                            ),
-                          ],
-                        ),
+    return ResponsiveGridRow(
+      children: [
+        ResponsiveGridCol(xs: 1, sm: 3, md: 4, child: SizedBox()),
+        ResponsiveGridCol(
+          xs: 10,
+          sm: 6,
+          md: 4,
+          child: Container(
+              height: 350,
+              child: Stack(
+                children: [
+                  Form(
+                    key: _formKey,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Expanded(
+                            flex: 3,
+                            child: SizedBox(),
+                          ),
+                          _emailPasswordWidget(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          _submitButton(),
+                          Container(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            alignment: Alignment.centerRight,
+                            child: Text('Forgot Password ?',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w500)),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: SizedBox(),
+                          ),
+                        ],
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: _createAccountLabel(),
-                    ),
-                  ],
-                ))));
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: _createAccountLabel(),
+                  ),
+                ],
+              )),
+        )
+      ],
+    );
   }
 
   Widget _submitButton() {
