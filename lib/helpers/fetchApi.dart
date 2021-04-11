@@ -13,10 +13,10 @@ setBaseUrl() {
   }
 }
 
-Future<Map> fetchApi(apiName) async {
+Future<Map> fetchApi(apiName, body) async {
   var url = '$baseUrl/$apiName';
-  var response =
-      await http.get(Uri.parse(url), headers: {"Accept": "application/json"});
+  var response = await http.post(Uri.parse(url),
+      headers: {"Accept": "application/json"}, body: body);
   var obj = await json.decode(response.body);
   return obj;
 }

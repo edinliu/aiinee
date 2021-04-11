@@ -25,7 +25,7 @@ class _MatchState extends State<Match> {
               Text(
                 widget.title,
               ),
-              TextButton(onPressed: aa, child: Text('fuck'))
+              TextButton(onPressed: aa, child: Text('X'))
             ],
           ),
         ));

@@ -39,7 +39,7 @@ class _AuthedState extends State<Authed> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('aiineee'),
+        title: Text('aiinee'),
         actions: <Widget>[
           PopupMenuButton<String>(
             onSelected: handleClick,
