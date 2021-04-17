@@ -14,7 +14,7 @@ class _ProfileState extends State<Profile> {
   var nickName = '';
 
   getData() async {
-    var res = await fetchApi('a/helloworld');
+    var res = await fetchApi('a/helloworld', {});
     setState(() {
       nickName = res['haha'];
     });
